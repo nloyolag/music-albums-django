@@ -1,0 +1,4 @@
+Django==1.9.1
+django-grappelli==2.7.3
+djangorestframework==3.3.2
+wheel==0.24.0
