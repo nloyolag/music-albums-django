@@ -1,0 +1,20 @@
+# Install pip
+python get-pip.py
+
+# Install Virtualenv
+pip install virtualenv
+
+# Install Virtualenvwrapper
+pip install virtualenvwrapper
+
+# Create Virtualenv
+mkvirtualenv --python=/usr/bin/python3 music-albums
+
+# Install requirements
+pip install -r requirements.txt
+
+# Start Django Project
+django-admin startproject mysite
+
+# Run Django server
+python manage.py runserver
