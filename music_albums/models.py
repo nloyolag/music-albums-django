@@ -29,18 +29,18 @@ class Label(django.db.models.Model):
 
 class Album(django.db.models.Model):
 
-    ONE = "★"
-    TWO = "★★"
-    THREE = "★★★"
-    FOUR = "★★★★"
-    FIVE = "★★★★★"
+    ONE = 1
+    TWO = 2
+    THREE = 3
+    FOUR = 4
+    FIVE = 5
 
     RATING_CHOICES = (
-        (1, ONE),
-        (2, TWO),
-        (3, THREE),
-        (4, FOUR),
-        (5, FIVE)
+        (ONE, "★"),
+        (TWO, "★★"),
+        (THREE, "★★★"),
+        (FOUR, "★★★★"),
+        (FIVE, "★★★★★")
     )
 
     title = django.db.models.CharField(

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        {% load static %}
+        <title>{% block title %}{% endblock %}</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Language" content="es" />
+
+        <!-- CSS -->
+
+        {% block css %}{% endblock %}
+
+        <!-- JS -->
+
+        {% block js_header %}{% endblock %}
+
+    </head>
+    <body>
+
+        {% block content %}{% endblock %}
+
+        <!-- JS -->
+
+        {% block js_footer %}{% endblock %}
+    </body>
+</html>

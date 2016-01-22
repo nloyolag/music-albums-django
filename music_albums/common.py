@@ -34,3 +34,9 @@ MESSAGE__ALBUM_CORRECTLY_CREATED = "The albums was correctly created"
 ##########################################################
 
 ERROR__FUTURE_ALBUM = "Albums cannot be created in the future"
+
+##########################################################
+#                      Templates                         #
+##########################################################
+
+TEMPLATE__HOME = "sections/home.html"
