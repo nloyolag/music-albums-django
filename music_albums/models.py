@@ -5,19 +5,46 @@ import django.db.models
 import datetime
 
 # Music Albums imports
-import common
+from music_albums import common
+
+
+class Label(django.db.models.Model):
+
+    name = django.db.models.CharField(
+        max_length=500,
+        verbose_name=common.MODEL_FIELD__NAME
+    )
+    is_operating = django.db.models.BooleanField(
+        verbose_name=common.MODEL_FIELD__IS_OPERATING,
+        default=True
+    )
+
+    class Meta:
+        verbose_name = common.MODEL_NAME__RECORD_LABEL
+        verbose_name_plural = common.MODEL_NAME__RECORD_LABEL_PLURAL
+
+    def __str__(self):
+        return self.name
+
 
 class Album(django.db.models.Model):
 
+    ONE = "★"
+    TWO = "★★"
+    THREE = "★★★"
+    FOUR = "★★★★"
+    FIVE = "★★★★★"
+
     RATING_CHOICES = (
-        (1, "★"),
-        (2, "★★"),
-        (3, "★★★"),
-        (4, "★★★★"),
-        (5, "★★★★★")
+        (1, ONE),
+        (2, TWO),
+        (3, THREE),
+        (4, FOUR),
+        (5, FIVE)
     )
 
     title = django.db.models.CharField(
+    max_length=500,
         verbose_name=common.MODEL_FIELD__TITLE
     )
     release_date = django.db.models.DateTimeField(
@@ -54,6 +81,7 @@ class Album(django.db.models.Model):
 class Artist(django.db.models.Model):
 
     name = django.db.models.CharField(
+        max_length=500,
         verbose_name=common.MODEL_FIELD__NAME
     )
     albums = django.db.models.ManyToManyField(
@@ -65,24 +93,6 @@ class Artist(django.db.models.Model):
     class Meta:
         verbose_name = common.MODEL_NAME__ARTIST
         verbose_name_plural = common.MODEL_NAME__ARTIST_PLURAL
-
-    def __str__(self):
-        return self.name
-
-
-class Label(django.db.models.Model):
-
-    name = django.db.models.CharField(
-        verbose_name=common.MODEL_FIELD__NAME
-    )
-    is_operating = django.db.models.BooleanField(
-        verbose_name=common.MODEL_FIELD__IS_OPERATING,
-        default=True
-    )
-
-    class Meta:
-        verbose_name = common.MODEL_NAME__RECORD_LABEL
-        verbose_name_plural = common.MODEL_NAME__RECORD_LABEL_PLURAL
 
     def __str__(self):
         return self.name

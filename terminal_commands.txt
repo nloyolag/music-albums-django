@@ -18,3 +18,12 @@ django-admin startproject mysite
 
 # Run Django server
 python manage.py runserver
+
+# Save model migrations
+python manage.py makemigrations music_albums
+
+# Make migrations
+python manage.py migrate
+
+# Create superuser
+python manage.py createsuperuser
