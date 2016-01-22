@@ -18,6 +18,10 @@ class Label(django.db.models.Model):
         verbose_name=common.MODEL_FIELD__IS_OPERATING,
         default=True
     )
+    is_active = django.db.models.BooleanField(
+        default=True,
+        verbose_name=common.MODEL_FIELD__IS_ACTIVE
+    )
 
     class Meta:
         verbose_name = common.MODEL_NAME__RECORD_LABEL
@@ -44,7 +48,7 @@ class Album(django.db.models.Model):
     )
 
     title = django.db.models.CharField(
-    max_length=500,
+        max_length=500,
         verbose_name=common.MODEL_FIELD__TITLE
     )
     release_date = django.db.models.DateTimeField(
@@ -69,6 +73,10 @@ class Album(django.db.models.Model):
         blank=True,
         null=True
     )
+    is_active = django.db.models.BooleanField(
+        default=True,
+        verbose_name=common.MODEL_FIELD__IS_ACTIVE
+    )
 
     class Meta:
         verbose_name = common.MODEL_NAME__ALBUM
@@ -88,6 +96,10 @@ class Artist(django.db.models.Model):
         Album,
         related_name="artists",
         verbose_name=common.MODEL_NAME__ALBUM_PLURAL
+    )
+    is_active = django.db.models.BooleanField(
+        default=True,
+        verbose_name=common.MODEL_FIELD__IS_ACTIVE
     )
 
     class Meta:

@@ -67,6 +67,7 @@ MIDDLEWARE_CLASSES = [
 ]
 
 ROOT_URLCONF = 'music_albums.urls'
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 TEMPLATES = [
     {

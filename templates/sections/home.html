@@ -13,7 +13,27 @@
 {% endif %}
 
 <div class="albums-container">
+    {% if albums %}
 
+        {% for album in albums %}
+            <div class="album">
+                <h1>{{ album.title }}</h1>
+                <h2>{{ album.release_date }}</h2>
+                <h3>{{ album.rating }}</h3>
+                <img src="album.cover"/>
+                <p>{{ album.label }}</p>
+            </div>
+        {% endfor %}
+
+    {% else %}
+        <h1>There are no albums to show. Add one!</h1>
+    {% endif %}
 </div> <!-- .projects-container -->
+
+<form method="post" action="/dashboard/">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" class="btn btn-info" value="Submit Album">
+</form>
 
 {% endblock %}
